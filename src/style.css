@@ -4,9 +4,18 @@ position: relative;
 }
 
 .heroText {
-position: absolute;
+/* position: absolute;
 z-index: 1;
 top:100px;
-left: 25%;
+left: 25%; */
+text-align: center;
 color: white;
+}
+
+.main {
+    padding: 50px;
+    background-image: url(/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
 }
