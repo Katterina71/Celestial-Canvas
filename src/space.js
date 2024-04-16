@@ -1,5 +1,5 @@
 import  {objectDate} from './modules/module-1.js'
-import {createItems} from './modules/carousel.js'
+import * as Carousel from './modules/carousel.js'
 
 const api_key = '?api_key=NcvxJtlOQd3JLSNfaoewTOzHrzLhtxIEbugLnuWB'
 
@@ -85,9 +85,9 @@ try {
             let imageSrc = `${imgUrl}${dateObj.year}/${dateObj.month}/${dateObj.day}/png/${imageData[i].image}.png`; // Ensure imgUrl and dateObj are defined and correct
             
             if (i == "0") {
-                createItems(imageSrc,true);  
+                Carousel.createItems(imageSrc,true);  
             }
-            else { createItems(imageSrc,false); }
+            else { Carousel.createItems(imageSrc,false); }
             
         }
         
@@ -103,82 +103,5 @@ catch (error){
 
 
 
-
-const btn =document.getElementById('clickme');
-btn.addEventListener('click', function(event){
-    console.log('hello! you click me!')
-    event.preventDefault();
-
-    const allDivs = document.querySelectorAll('.carousel-item');
-    allDivs.forEach(div => {
-        console.log(div);
-    });
-})
-
-
-    // const images = document.getElementsByClassName('.d-block');
-    // let currentIndex = 0;
-
-    // function showImage(index) {
-    //     debugger;
-    //     images.forEach(image => {
-    //         let parentElement = image.parentElement;
-    //          parentElement.classList.remove('active');
-    //        });
-    //     let parentElement = images[index].parentElement;
-    //     parentElement.classList.add('active');
-    // }
-    // carouselImg.addEventListener('click', function(event){
-    //     console.log('click');
-    // })
-    let currentIndex = 0;
-
-    document.querySelector('.prev').addEventListener('click', function() {
-     
-        const allDivs = document.querySelectorAll('.carousel-item');
-        console.log(allDivs);
-
-        const divActive = Array.from(allDivs).find((div) => div.classList.contains('active'))
-        console.log(divActive);
-
-        divActive.classList.remove('active');
-        
-        const divPrev = divActive.previousElementSibling;
-
-        if (divPrev) {
-            divPrev.classList.add('active');
-        }
-        else {
-            allDivs[allDivs.length-1].classList.add('active') 
-        }
-
-        });
-  
-
-  
-
-
-    document.querySelector('.next').addEventListener('click', function() {
-        console.log('Oh, you click prev')
-    
-        const allDivs = document.querySelectorAll('.carousel-item');
-        console.log(allDivs);
-
-        const divActive = Array.from(allDivs).find((div) => div.classList.contains('active'))
-        console.log(divActive);
-
-        divActive.classList.remove('active');
-        
-        const divNext = divActive.nextElementSibling;
-
-        if (divNext) {
-            divNext.classList.add('active');
-        }
-        else {
-            allDivs[0].classList.add('active') 
-        }
-
-
-       
-        console.log(divNext);
-    });
+document.querySelector('.prev').addEventListener('click', Carousel.previouseSlide);
+document.querySelector('.next').addEventListener('click',Carousel.nextSlide)

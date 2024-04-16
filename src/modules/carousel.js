@@ -20,3 +20,32 @@ export function createItems (imgSrc,active) {
 }
 
 
+export function nextSlide(){
+    const allDivs = document.querySelectorAll('.carousel-item');
+    const divActive = Array.from(allDivs).find((div) => div.classList.contains('active'))
+    divActive.classList.remove('active');
+    
+    const divPrev = divActive.previousElementSibling;
+    if (divPrev) {
+        divPrev.classList.add('active');
+    }
+    else {
+        allDivs[allDivs.length-1].classList.add('active') 
+    }
+}
+
+export function previouseSlide(){
+ 
+    const allDivs = document.querySelectorAll('.carousel-item');
+
+    const divActive = Array.from(allDivs).find((div) => div.classList.contains('active'))
+    divActive.classList.remove('active');
+    
+    const divNext = divActive.nextElementSibling;
+    if (divNext) {
+        divNext.classList.add('active');
+    }
+    else {
+        allDivs[0].classList.add('active') 
+    }
+}
