@@ -42,36 +42,38 @@
             </div>
         </div>
 
-    <div class="container text-light mt-5" id="earthCarousel">
+    <div class="container text-light mt-5" >
             <div class="row">
-            <div class="col-5">
-                <h2 class="mt-4">View NASA EPIC Images by Date</h2>
-                <label for="datePicker">Select a Date:</label> 
-                <div class="input-group mb-3 bg-dark mt-5">
-                    <input type="date" class="form-control" id="datePicker"  aria-label="Date" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" value="2024-04-11">Get Images</button>
-                </div>
-             </div>
+              
+            <div class="col-5" id="earthCarousel">
+                <h2 class="mt-4">View NASA EPIC Images</h2>
+                 <p class ="text"></p>
+            </div>
+
              <div class="col">
-                <div class="carousel slide">
+
+                <div class="carousel slide" id="carouselExample" data-bs-ride="carousel">
+
                   <div class="carousel-inner" id="carousel-inner">
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+
+                  <button class="carousel-control-prev prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                  <button class="carousel-control-next next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                   </button>
+
                 </div>
             </div>
           </div>
-    </div>
-            
+    
+      </div>
 
-
-</div>
- <script type="module" src="./src/space.js"></script>
+ </div>
+ <script type="module" src="./src/space.js" defer></script>
 </body>
 </html>

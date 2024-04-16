@@ -4,10 +4,6 @@ position: relative;
 }
 
 .heroText {
-/* position: absolute;
-z-index: 1;
-top:100px;
-left: 25%; */
 text-align: center;
 color: white;
 }

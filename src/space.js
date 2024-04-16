@@ -7,8 +7,8 @@ const heroImg = document.getElementById('heroIMG');
 const todayDate= document.getElementById('todayDate');
 const imgTitle= document.getElementById('imgTitle');
 const explanation= document.getElementById('explanation');
-const buttonDate = document.getElementById('button-addon2');
-const getDate = document.getElementById('datePicker');
+const carouselImg = document.getElementById('carousel-inner');
+
 const earthCarousel = document.getElementById('earthCarousel');
 
 
@@ -38,7 +38,7 @@ try {
    imgTitle.innerHTML = todayData.title;
    explanation.innerHTML = todayData.explanation;
 
-   getEpicImage('2024-04-10')
+   getEpicImage()
    return todayData; 
    
 } catch (error) {
@@ -48,70 +48,53 @@ try {
 
 
 
-async function getEpicImage(date) {
+async function getEpicImage() {
     const url = 'https://api.nasa.gov/EPIC/api/natural/images'
     const imgUrl='https://epic.gsfc.nasa.gov/archive/natural/'
-    
-    // const dataValue = "2024-04-10";
-      
-    const dataValue = date;
-    console.log(dataValue);
-    const dateObj = objectDate(dataValue);
-    // console.log(dateObj);
+   
 try {
    
-    const response = await fetch (url+api_key, {
+    let response = await fetch (url+api_key, {
         "method": "get"
     })
-   
 
     if (!response.ok || response.status === '302'|| response.status === '301') {
         throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const imageData = await response.json();
+    let imageData = await response.json();
+
+    const dataValue = imageData[0].date.split(" ");
+    const dateObj = objectDate(dataValue[0]);
+   
+    // earthCarousel.getElementsByTagName('p').innerHTML = dataValue[0].date;
+    const text = earthCarousel.querySelector('.text')
+    text.innerHTML = imageData[0].caption;
 
     if (imageData && imageData.length > 0) {
-        let imageInfo = {};
-        console.log(imageData);
-        console.log(imageData[0]);
-        imageData.forEach(element => {
-            imageInfo[element.identifier] = element.image;
-            let idimg = element.image; 
-            let imageSrc = `${imgUrl}${dateObj.year}/${dateObj.month}/${dateObj.day}/png/${idimg}.png`; // Ensure imgUrl and dateObj are defined and correct
-            console.log(imageSrc);
-            debugger;
-            // createItems(imageSrc);  
+      
+        // imageData.forEach(element => {
+        //     imageInfo[element.identifier] = element.image;
+        //     let idimg = element.image; 
+        //     let imageSrc = `${imgUrl}${dateObj.year}/${dateObj.month}/${dateObj.day}/png/${idimg}.png`; // Ensure imgUrl and dateObj are defined and correct
+        //     createItems(imageSrc);  
+        // });
 
-            const carousel = document.getElementById('carousel-inner');
-
-            const divCarouselItem = document.createElement('div');
-            divCarouselItem.classList.add('carousel-item');
-            divCarouselItem.classList.add('active');
+        for (let i in imageData){
+            
+            let imageSrc = `${imgUrl}${dateObj.year}/${dateObj.month}/${dateObj.day}/png/${imageData[i].image}.png`; // Ensure imgUrl and dateObj are defined and correct
+            
+            if (i == "0") {
+                createItems(imageSrc,true);  
+            }
+            else { createItems(imageSrc,false); }
+            
+        }
         
-            const imgItem = document.createElement('img');
-            imgItem.classList.add('d-block');
-            imgItem.classList.add('w-100'); 
-            imgItem.alt = imageSrc;
-            imgItem.src = imageSrc;
-       
-            // imgItem.src = imgSrc;
-        
-            divCarouselItem.appendChild(imgItem);
-     
-            carousel.appendChild(divCarouselItem);
-
-            // console.log(element.image, element.identifier);
-        });
-        
-
     } else {
         throw new Error('No data found!');
     }
-        // const imageName = data[0].image;
-        // const imageSrc = `${imgUrl}${dateObj.year}/${dateObj.month}/${dateObj.day}/png/${imageName}.png`;
-        // document.getElementById("photo").src = imageSrc;
-        // console.log(imageSrc);
+
 }
 catch (error){
     throw new Error ("Error fetching data!")
@@ -119,11 +102,28 @@ catch (error){
 };
 
 
-earthCarousel.addEventListener('click', function (event){
-    event.preventDefault();
-    const clickElement = event.target; 
-    if (clickElement.nodeName === 'BUTTON'){
-    const dataValue = getDate.value;
-    getEpicImage() 
-    console.log(dataValue);}
-});
+    // const images = document.getElementsByClassName('.d-block');
+    // let currentIndex = 0;
+
+    // function showImage(index) {
+    //     debugger;
+    //     images.forEach(image => {
+    //         let parentElement = image.parentElement;
+    //          parentElement.classList.remove('active');
+    //        });
+    //     let parentElement = images[index].parentElement;
+    //     parentElement.classList.add('active');
+    // }
+    // carouselImg.addEventListener('click', function(event){
+    //     console.log('click');
+    // })
+    // document.querySelector('.prev').addEventListener('click', function() {
+      
+    //     currentIndex = currentIndex <= 0 ? images.length - 1 : currentIndex - 1;
+    //     showImage(currentIndex);
+    // });
+
+    // document.querySelector('.next').addEventListener('click', function() {
+    //     currentIndex = currentIndex >= images.length - 1 ? 0 : currentIndex + 1;
+    //     showImage(currentIndex);
+    // });
