@@ -1,3 +1,5 @@
+import * as DOM from './dom.js'
+
 export function createItems (imgSrc,active) {
     const carousel = document.getElementById('carousel-inner');
 
