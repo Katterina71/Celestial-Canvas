@@ -3,6 +3,13 @@ import * as Carousel from './modules/carousel.js'
 
 const api_key = '?api_key=NcvxJtlOQd3JLSNfaoewTOzHrzLhtxIEbugLnuWB'
 
+const applicationId = '13c7d002-5b9b-40d8-8f6a-6c9536be08ab';
+const applicationSecret = '120c5b697566ac3fb25846278a74edc030675916824c3d15d622683a9721035271e158040b1f9c6feef4d7c4c19f302fa241fcd3453a94aef03fcae57fff9f3c097687787497fc2520314d9f5d28a1e51c6942290b94abbdf99f52a1bb7d13017aab7b48e72a4f89153365b43486fd16';
+const authString = btoa(`${applicationId}:${applicationSecret}`);
+
+
+const astronomy_api_key = "13c7d002-5b9b-40d8-8f6a-6c9536be08ab";
+
 const heroImg = document.getElementById('heroIMG');
 const todayDate= document.getElementById('todayDate');
 const imgTitle= document.getElementById('imgTitle');
@@ -67,18 +74,10 @@ try {
     const dataValue = imageData[0].date.split(" ");
     const dateObj = objectDate(dataValue[0]);
    
-    // earthCarousel.getElementsByTagName('p').innerHTML = dataValue[0].date;
     const text = earthCarousel.querySelector('.text')
     text.innerHTML = imageData[0].caption;
 
     if (imageData && imageData.length > 0) {
-      
-        // imageData.forEach(element => {
-        //     imageInfo[element.identifier] = element.image;
-        //     let idimg = element.image; 
-        //     let imageSrc = `${imgUrl}${dateObj.year}/${dateObj.month}/${dateObj.day}/png/${idimg}.png`; // Ensure imgUrl and dateObj are defined and correct
-        //     createItems(imageSrc);  
-        // });
 
         for (let i in imageData){
             
@@ -101,7 +100,40 @@ catch (error){
 }
 };
 
+// (async function astronomyAPI (){
+//     const url = 'https://api.astronomyapi.com/api/v2/bodies';
+//     const response = await fetch(url, {
+//         'method': 'GET',
+//         'header': {
+//             "Authorization": "Basic MTNjN2QwMDItNWI5Yi00MGQ4LThmNmEtNmM5NTM2YmUwOGFiOjEyMGM1YjY5NzU2NmFjM2ZiMjU4NDYyNzhhNzRlZGMwMzA2NzU5MTY4MjRjM2QxNWQ2MjI2ODNhOTcyMTAzNTI3MWUxNTgwNDBiMWY5YzZmZWVmNGQ3YzRjMTlmMzAyZmEyNDFmY2QzNDUzYTk0YWVmMDNmY2FlNTdmZmY5ZjNjMDk3Njg3Nzg3NDk3ZmMyNTIwMzE0ZDlmNWQyOGExZTUxYzY5NDIyOTBiOTRhYmJkZjk5ZjUyYTFiYjdkMTMwMTdhYWI3YjQ4ZTcyYTRmODkxNTMzNjViNDM0ODZmZDE2"
+//           }        
+//     })
+// })();
+(async function astronomyAPI () {
+    const url ='https://api.astronomyapi.com/api/v2/bodies/positions'
+    fetch(url, {
+        mode: 'no-cors', // This avoids the CORS error but you cannot read the response
+        method: 'GET', // or 'POST' if that is required by the API
+        headers: {
+            Authorization: `Basic ${authString}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); 
+        // you can't do anything with response here because it's opaque
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+})
+})();
 
 
 document.querySelector('.prev').addEventListener('click', Carousel.previouseSlide);
 document.querySelector('.next').addEventListener('click',Carousel.nextSlide)
+
