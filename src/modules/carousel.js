@@ -51,3 +51,27 @@ export function previouseSlide(){
         allDivs[0].classList.add('active') 
     }
 }
+
+
+function changeIMG(){
+    debugger;
+    const allDivs = document.querySelectorAll('.carousel-item');
+
+    const divActive = Array.from(allDivs).find((div) => div.classList.contains('active'))
+    divActive.classList.remove('active');
+    
+    const divNext = divActive.nextElementSibling;
+    if (divNext) {
+        divNext.classList.add('active');
+    }
+    else {
+        allDivs[0].classList.add('active') 
+    }
+    setTimeout(changeIMG(), 300);
+}
+
+export function spinning(stop){
+    debugger;
+    if (stop===true) return;
+    else changeIMG();
+}
