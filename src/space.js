@@ -75,7 +75,7 @@ try {
     const dateObj = objectDate(dataValue[0]);
    
     const text = earthCarousel.querySelector('.text')
-    text.innerHTML = imageData[0].caption;
+    text.innerHTML = `${imageData[0].caption}. Data: ${imageData[0].date}`;
 
     if (imageData && imageData.length > 0) {
 
@@ -100,39 +100,23 @@ catch (error){
 }
 };
 
-// (async function astronomyAPI (){
-//     const url = 'https://api.astronomyapi.com/api/v2/bodies';
-//     const response = await fetch(url, {
-//         'method': 'GET',
-//         'header': {
-//             "Authorization": "Basic MTNjN2QwMDItNWI5Yi00MGQ4LThmNmEtNmM5NTM2YmUwOGFiOjEyMGM1YjY5NzU2NmFjM2ZiMjU4NDYyNzhhNzRlZGMwMzA2NzU5MTY4MjRjM2QxNWQ2MjI2ODNhOTcyMTAzNTI3MWUxNTgwNDBiMWY5YzZmZWVmNGQ3YzRjMTlmMzAyZmEyNDFmY2QzNDUzYTk0YWVmMDNmY2FlNTdmZmY5ZjNjMDk3Njg3Nzg3NDk3ZmMyNTIwMzE0ZDlmNWQyOGExZTUxYzY5NDIyOTBiOTRhYmJkZjk5ZjUyYTFiYjdkMTMwMTdhYWI3YjQ4ZTcyYTRmODkxNTMzNjViNDM0ODZmZDE2"
-//           }        
-//     })
-// })();
-(async function astronomyAPI () {
-    const url ='https://api.astronomyapi.com/api/v2/bodies/positions'
-    fetch(url, {
-        mode: 'no-cors', // This avoids the CORS error but you cannot read the response
-        method: 'GET', // or 'POST' if that is required by the API
-        headers: {
-            Authorization: `Basic ${authString}`
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json(); 
-        // you can't do anything with response here because it's opaque
-    })
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Fetch error:', error);
+(async function astronomyAPI (){ 
+const url = 'https://api.astronomyapi.com/api/v2/bodies';
+fetch(url, {
+    method: 'GET',
+    headers: {
+        'Authorization': `Basic ${authString}`
+    }
 })
+.then(response => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+})
+.then(data => console.log(data))
+.catch(error => console.error('Fetch error:', error));
 })();
-
 
 document.querySelector('.prev').addEventListener('click', Carousel.previouseSlide);
 document.querySelector('.next').addEventListener('click',Carousel.nextSlide)
