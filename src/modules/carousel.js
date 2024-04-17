@@ -1,5 +1,7 @@
 import * as DOM from './dom.js'
 
+let run = true;
+
 export function createItems (imgSrc,active) {
     const carousel = document.getElementById('carousel-inner');
 
@@ -37,7 +39,7 @@ export function nextSlide(){
 }
 
 export function previouseSlide(){
- 
+
     const allDivs = document.querySelectorAll('.carousel-item');
 
     const divActive = Array.from(allDivs).find((div) => div.classList.contains('active'))
@@ -54,7 +56,7 @@ export function previouseSlide(){
 
 
 function changeIMG(){
-    debugger;
+    if (run === true) {
     const allDivs = document.querySelectorAll('.carousel-item');
 
     const divActive = Array.from(allDivs).find((div) => div.classList.contains('active'))
@@ -67,13 +69,14 @@ function changeIMG(){
     else {
         allDivs[0].classList.add('active') 
     }
+
     setTimeout(function() {
         changeIMG()
     }, 150);
 }
+}
 
 export function spinning(stop){
-    debugger;
-    if (stop===true) return;
+    if (stop===true) return run=false;
     else changeIMG();
 }
