@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <script src="https://widgets.astronomyapi.com/cdn/astronomy-api-widgets.js"></script>
+    
     <title>Celestial canvas</title>
+
 </head>
 <body class="text-bg-light">
     <header>
@@ -21,12 +25,13 @@
 
     <div class="main">
         <div class="heroText">
-            <h1>Discover the Wonders of the Universe in real time!</h1>
+            <h1>Discover the Wonders of the Universe with us!</h1>
          </div>
 
         <div class="container mt-5 text-light">
             <div class="row">
-                <h2>Today's Stunning Space Snapshot</h2>
+                <h2>The Astronomy Picture of the Day</h2>
+                <p>The Astronomy Picture of the Day archive is a treasure trove of cosmic beauty and celestial events.</p>
                 <p>NASA screenshot: <span id="todayDate"></span></p>
             </div>
             <div class="row bg-dark p-4">  
@@ -75,16 +80,38 @@
       </div>
       <div class="container text-light mt-5">
         <div class="row">
-          <div class="col">
-            <h2>Moon phase</h2>
-          </div>
-          <div class="col">
+            <h2>Moon Phase</h2>
+            <p>Find out what the moon phase is on a specific date.</p>
+        </div>
+        <div class="row">
+            <div class="col-3">
+            <input class="form-control my-2" type="date" placeholder="Default input" aria-label="default input example">
+            <select class="form-select my-2" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            <button class="btn btn btn-outline-light px-5 my-2" id="stopBtn">Generate Widget</button>
+            </div>
+            <div class="col" id="moon-phase">
+                <div id="astronomy-widget-container"></div>
+            </div>
+        </div>
+        
+      </div>
+      <div class="container text-light mt-5">
+        <div class="row">
+            <h2>Planetary Positions</h2>
+        </div>
+        <div class="row">
 
-          </div>
         </div>
       </div>
 
  </div>
+
+
  <script type="module" src="./src/space.js" defer></script>
 </body>
 </html>

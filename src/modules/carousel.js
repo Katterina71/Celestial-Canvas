@@ -38,7 +38,7 @@ export function nextSlide(){
     }
 }
 
-export function previouseSlide(){
+export function previousSlide(){
 
     const allDivs = document.querySelectorAll('.carousel-item');
 

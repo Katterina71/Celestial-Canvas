@@ -8,13 +8,20 @@ import * as DOM from './modules/dom.js';
 
 dataNasaAPI.getHeroImage();
 dataAstronomyAPI.astronomyAPI();
+dataAstronomyAPI.planetaryPositions()
+
+dataAstronomyAPI.initializeWidgets();
+
 setTimeout(function() {
     Carousel.spinning(false);
 }, 3000);
 
-document.querySelector('.prev').addEventListener('click', Carousel.previouseSlide);
+// document.addEventListener("DOMContentLoaded", function () {
+
+document.querySelector('.prev').addEventListener('click', Carousel.previousSlide);
 document.querySelector('.next').addEventListener('click',Carousel.nextSlide)
-debugger
+
 DOM.stopBtn.addEventListener('click', function(e){
     Carousel.spinning(true)
 });
+
