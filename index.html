@@ -85,27 +85,25 @@
         </div>
         <div class="row bg-dark py-4">
             <div class="col-3 px-4">
-            <input class="form-control my-2" type="date" placeholder="Default input" aria-label="default input example">
+            <input class="form-control my-2" type="date" placeholder="Default input" id="dateMoonPhase">
             
             <div class="row py-4">
                 <div class="col">
                     <label for="latitude" class="form-label">Latitude</label>
-                    <input type="text" class="form-control" id="latitude" placeholder="">
+                    <input type="text" class="form-control" id="latitudeMoonPhase" value="39.579231"aria-label="Default input">
                 </div>
                 <div class="col">
                     <label for="longitude" class="form-label">Longitude</label>
-                    <input type="text" class="form-control" id="longitude" placeholder="">
+                    <input type="text" class="form-control" id="longitudeMoonPhase" value="-104.876694" aria-label="Default input">
                </div>
             </div>
-            <select class="form-select my-2" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select my-2" aria-label="Background Style" id="selectBg">
+                <option value="1">Stars</option>
+                <option value="2">Solid</option>
               </select>
-            <button class="btn btn btn-outline-light px-5 my-2" id="stopBtn">Generate Widget</button>
+            <button class="btn btn btn-outline-light px-5 my-2" id="btnMoonPhase">Generate Widget</button>
             </div>
-            <div class="col text-center" >
+            <div class="col text-center align-self-center" >
                 <div id="moon-phase"></div>
             </div>
         </div>
