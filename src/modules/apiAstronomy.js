@@ -1,3 +1,4 @@
+import * as Carousel from './carousel.js'
 
 const applicationId = '13c7d002-5b9b-40d8-8f6a-6c9536be08ab';
 const applicationSecret = '120c5b697566ac3fb25846278a74edc030675916824c3d15d622683a9721035271e158040b1f9c6feef4d7c4c19f302fa241fcd3453a94aef03fcae57fff9f3c097687787497fc2520314d9f5d28a1e51c6942290b94abbdf99f52a1bb7d13017aab7b48e72a4f89153365b43486fd16';
@@ -59,7 +60,7 @@ const data = JSON.stringify({
         "date": "2024-04-17"
     },
     "view": {
-        "type": "portrait-simple",
+        "type": "landscape-simple",
         "parameters": {}
     }
 });
@@ -78,7 +79,8 @@ const data = JSON.stringify({
         return response.json();
     })
     .then(data => {
-        console.log("Response data:", data);
+        const moonPhaseSrc = data.data.imageUrl;
+        Carousel.moonPhase(moonPhaseSrc);
     })
     .catch(error => {
         console.error("Error fetching data:", error);

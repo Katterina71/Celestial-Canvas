@@ -1,5 +1,6 @@
 import * as DOM from './dom.js'
 
+
 let run = true;
 
 export function createItems (imgSrc,active) {
@@ -79,4 +80,10 @@ function changeIMG(){
 export function spinning(stop){
     if (stop===true) return run=false;
     else changeIMG();
+}
+
+export function moonPhase(srcMoon){
+    const imgMoon = document.createElement('img');
+    imgMoon.src = srcMoon;
+    DOM.moonWidget.appendChild(imgMoon);
 }
