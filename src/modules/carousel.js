@@ -67,7 +67,9 @@ function changeIMG(){
     else {
         allDivs[0].classList.add('active') 
     }
-    setTimeout(changeIMG(), 300);
+    setTimeout(function() {
+        changeIMG()
+    }, 150);
 }
 
 export function spinning(stop){
