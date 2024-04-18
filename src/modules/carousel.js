@@ -109,11 +109,11 @@ export function createMoonWidget (){
     dataAstronomyAPI.initializeWidgets();
 }
 
-export function listOfBodies (index, bodyName){
+export function listOfBodies (index, bodyName, element){
     const optionBody = document.createElement('option');
     optionBody.value = index;
     optionBody.innerHTML = bodyName;
-    DOM.celestialObjects.appendChild(optionBody);
+    element.appendChild(optionBody);
 } 
 
 export function getCelestialObjects(){
@@ -129,7 +129,7 @@ export function getCelestialObjects(){
 }
 
 export function generateCelestialBody(){
- debugger;
+ 
         if (DOM.celestialBodyInfo.hasChildNodes()) {
 
     
@@ -175,4 +175,19 @@ export function addCelestialBodyInfo(bodyData){
     DOM.bodyImg.appendChild(imgBody);
 
 }
+
+
+export function getValueEvents() {
+
+    let getValue = {
+        fromDate : DOM.dateStartCelestialEvent.value,
+        toDate : DOM.dateEndCelestialEvent.value,
+        latitude : parseFloat(DOM.latitudeCelestialEvent.value),
+        longitude : parseFloat(DOM.longitudeCelestialEvent.value),
+        time: DOM.timeCelestialEvent.value,
+        bodyId : DOM.celestialEvent.options[DOM.celestialEvent.selectedIndex].text
+    };
+        return getValue;
+}
+
 

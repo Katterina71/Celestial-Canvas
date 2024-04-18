@@ -27,6 +27,7 @@ export async function getHeroImage() {
        DOM.todayDate.innerHTML = todayData.date;
        DOM.imgTitle.innerHTML = todayData.title;
        DOM.explanation.innerHTML = todayData.explanation;
+       DOM.copyright.innerHTML = todayData.copyright;
     
        getEpicImage()
        return todayData; 

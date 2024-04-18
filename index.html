@@ -11,7 +11,7 @@
     <title>Celestial canvas</title>
 
 </head>
-<body class="text-bg-light">
+<body class="text-bg-light bg-dark ">
     <header>
         <nav class="navbar bg-dark">
             <div class="container">
@@ -23,22 +23,23 @@
     </header>
 
 
-    <div class="main">
+    <div class="main text-light">
         <div class="heroText">
             <h1>Discover the Wonders of the Universe with us!</h1>
          </div>
 
         <div class="container mt-5 text-light">
-            <div class="row">
+            <div class="row mb-3">
                 <h2>The Astronomy Picture of the Day</h2>
                 <p>The Astronomy Picture of the Day archive is a treasure trove of cosmic beauty and celestial events.</p>
                 <p>NASA screenshot: <span id="todayDate"></span></p>
+                <p>Copyright: <span id="copyright"></span></p>
             </div>
-            <div class="row bg-dark p-4">  
-                <div class="col-5">
+            <div class="row mb-3 bg-dark p-4">  
+                <div class="col-md-5">
                     <h3 id ="imgTitle"></h3>    
                 </div>
-                <div class="col">
+                <div class="col-md">
                     <img src="" alt="hero" id="heroIMG" width="100%">
                 </div>
             </div>
@@ -48,9 +49,9 @@
         </div>
 
     <div class="container text-light mt-5" >
-            <div class="row">
+            <div class="row mb-3">
               
-            <div class="col-5" id="earthCarousel">
+            <div class="col-md-5" id="earthCarousel">
                 <h2 class="mt-4">View NASA EPIC Images</h2>
                 <p>NASA's Earth Polychromatic Imaging Camera (EPIC) aboard the Deep Space Climate Observatory (DSCOVR) satellite captures stunning, full-color images of Earth multiple times a day from one million miles away. Positioned at the Lagrange point 1 (L1), EPIC monitors Earth’s atmosphere, weather patterns, and environmental changes, providing essential data for climate research and weather forecasting. The vivid images of our planet also serve to increase public awareness of environmental issues and the planet's interconnected ecosystems. Additionally, EPIC captures unique phenomena like solar eclipses, offering valuable insights and enhancing our understanding of Earth’s climate system.</p>
                 <hr class="border border-ligth border-2 opacity-50 my-4">
@@ -59,7 +60,7 @@
 
             </div>
 
-             <div class="col">
+             <div class="col-md">
 
                 <div class="carousel slide" id="carouselExample" data-bs-ride="carousel">
 
@@ -86,22 +87,22 @@
             <p>Find out what the moon phase is on a specific date.</p>
         </div>
         <div class="row bg-dark py-4">
-            <div class="col-3 px-4">
+            <div class="col-md-3 px-4">
             <input class="form-control my-2" type="date" placeholder="Default input" id="dateMoonPhase">
             
             <div class="row py-4">
-                <div class="col">
+                <div class="col-md">
                     <label for="latitude" class="form-label">Latitude</label>
                     <input type="text" class="form-control" id="latitudeMoonPhase" value="39.579231"aria-label="Default input">
                 </div>
-                <div class="col">
+                <div class="col-md">
                     <label for="longitude" class="form-label">Longitude</label>
                     <input type="text" class="form-control" id="longitudeMoonPhase" value="-104.876694" aria-label="Default input">
                </div>
             </div>
             <button class="btn btn btn-outline-light px-5 my-2" id="btnMoonPhase">Generate Widget</button>
             </div>
-            <div class="col text-center align-self-center" >
+            <div class="col-md text-center align-self-center" >
                 <div id="moon-phase"></div>
             </div>
         </div>
@@ -112,18 +113,18 @@
             <h2>Space bodies position and events</h2>
         </div>
         <div class="row bg-dark p-4">
-            <div class="col-3">
+            <div class="col-md-3">
                 <select class="form-select my-2" aria-label="Background Style" id="celestialObjects">
      
                 </select>
                 <input class="form-control my-2" type="date" placeholder="Default input" id="dateCelestialObjects">
                 <input class="form-control my-2" type="time" placeholder="Default input" id="timeCelestialObjects">
                 <div class="row py-4">
-                    <div class="col">
+                    <div class="col-md">
                         <label for="latitude" class="form-label">Latitude</label>
                         <input type="text" class="form-control" id="latitudeCelestialObjects" value="39.579231"aria-label="Default input">
                     </div>
-                    <div class="col">
+                    <div class="col-md">
                         <label for="longitude" class="form-label">Longitude</label>
                         <input type="text" class="form-control" id="longitudeCelestialObjects" value="-104.876694" aria-label="Default input">
                    </div>
@@ -131,7 +132,7 @@
 
                 <button class="btn btn btn-outline-light px-5 my-2" id="btnCelestialObjects">Generate</button>
             </div>
-            <div class="col px-3 my-2">
+            <div class="col-md px-3 my-2">
                 <div id="celestialBodyInfo"></div>
                 <div>
                     <p><b>From Earth km:</b>Lists distances between Earth and celestial objects in kilometers, highlighting spatial scales within the universe.</p>
@@ -139,13 +140,63 @@
                     <p><b>Constellation:</b>Categorizes stars and celestial events by their positions within recognizable star patterns.</p>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div id="bodyImg"></div>
             </div>
         </div>
       </div>
- <!-- <footer class="container bg-dark p-4"><div class="row text-light align-self-center">Copyright 2024</div></footer> -->
+      <div class="container mt-5">
+        <div class="row">
+            <h2>Interesting celestial events</h2>
+            <p>Get celestial events for a given body for the given date range.</p>
+        </div>
+        <div class="row mb-3 bg-dark px-2 pt-4">
+       
+                <div class="col-md-3">
+                    <select class="form-select my-2" aria-label="Background Style" id="celestialEvent">
+                    <option value="sun">Sun</option>
+                    <option value="moon">Moon</option>
+                </select>
+                    <input class="form-control my-2" type="date" placeholder="Default input" id="dateStartCelestialEvent">
+                    <input class="form-control my-2" type="date" placeholder="Default input" id="dateEndCelestialEvent">
+                    <input class="form-control my-2" type="time" placeholder="Default input" id="timeCelestialEvent">
+                    <div class="row py-4">
+                        <div class="col-md">
+                            <label for="latitude" class="form-label">Latitude</label>
+                            <input type="text" class="form-control" id="latitudeCelestialEvent" value="39.579231"aria-label="Default input">
+                        </div>
+                        <div class="col-md">
+                            <label for="longitude" class="form-label">Longitude</label>
+                            <input type="text" class="form-control" id="longitudeCelestialEvent" value="-104.876694" aria-label="Default input">
+                       </div>
+                    </div>
+    
+                    <button class="btn btn btn-outline-light px-5 my-2" id="btnCelestialEvent">Generate</button>
+             </div>
+            <div class="col-md-9 mt-3">
+            <table class="table table-striped-columns" id="celestialEvents">
+                <thead>
+                    <tr>
+                      <th scope="col-3">Body</th>
+                      <th scope="col">Event</th>
+                      <th scope="col">Date from</th>
+                      <th scope="col">Date to</th>
+                    </tr>
+                  </thead>
+                  <tbody id = "celestialEventsTable" >
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
  </div>
  <script type="module" src="./src/space.js" defer></script>
 </body>
+<footer class="container bg-dark p-4 text-light"><div class="row mb-3 text-center"><dov class="col-md"></dov>Copyright 2024</div></footer>
 </html>
