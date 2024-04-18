@@ -24,23 +24,33 @@ export const authString = btoa(`${applicationId}:${applicationSecret}`);
 //     .catch(error => console.error('Fetch error:', error));
 //     };
 
-// export async function planetaryPositions (){ 
-//     const url = 'https://api.astronomyapi.com/api/v2/bodies/positions?longitude=-84.39733&latitude=33.775867&elevation=1&from_date=2024-04-17&to_date=2024-04-17&time=10%3A21%3A28';
-//         fetch(url, {
-//             method: 'GET',
-//             headers: {
-//                 'Authorization': `Basic ${authString}`
-//             }
-//         })
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! Status: ${response.status}`);
-//             }
-//             return response.json();
-//         })
-//         .then(data => console.log(data))
-//         .catch(error => console.error('Fetch error:', error));
-// };
+export async function planetaryPositions (){ 
+    const url = 'https://api.astronomyapi.com/api/v2/bodies/positions?longitude=-84.39733&latitude=33.775867&elevation=1&from_date=2024-04-17&to_date=2024-04-17&time=10%3A21%3A28';
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Basic ${authString}`
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+    
+            const planetsData = data.data.table.rows;
+            const planets = planetsData.map(element => element.entry.name);
+            for (let i in planets ){
+                debugger;
+                Carousel.listOfBodies (i, planets[i]);
+                debugger;
+            }
+
+        })
+        .catch(error => console.error('Fetch error:', error));
+};
 
 
 

@@ -107,3 +107,9 @@ export function createMoonWidget (){
     dataAstronomyAPI.initializeWidgets();
 }
 
+export function listOfBodies (index, bodyName){
+    const optionBody = document.createElement('option');
+    optionBody.value = index;
+    optionBody.innerHTML = bodyName;
+    DOM.constellation.appendChild(optionBody);
+} 

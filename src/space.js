@@ -13,7 +13,7 @@ DOM.dateStarChart.value = currentDateAndTime();
 
 
 dataAstronomyAPI.initializeWidgets();
-
+dataAstronomyAPI.planetaryPositions();
 
 setTimeout(function() {
     Carousel.spinning(false);
