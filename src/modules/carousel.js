@@ -90,10 +90,11 @@ export function moonPhase(srcMoon){
 
 
 export function getValueMoonPhase(){
-    let getValue = {};
-    getValue.date = DOM.dateMoonPhase.value;
-    getValue.latitude = parseFloat(DOM.latitudeMoonPhase.value);
-    getValue.longitude = parseFloat(DOM.longitudeMoonPhase.value);
+    let getValue = {
+    date : DOM.dateMoonPhase.value,
+    latitude : parseFloat(DOM.latitudeMoonPhase.value),
+    longitude : parseFloat(DOM.longitudeMoonPhase.value)
+};
     return getValue
 }
 
@@ -116,12 +117,34 @@ export function listOfBodies (index, bodyName){
 
 export function getCelestialObjects(){
     
-    let getValue = {};
-    getValue.date = DOM.dateCelestialObjects.value;
-    getValue.latitude = parseFloat(DOM.latitudeCelestialObjects.value);
-    getValue.longitude = parseFloat(DOM.longitudeCelestialObjects.value);
-    getValue.time = DOM.timeCelestialObjects.value
-    getValue.name =  DOM.celestialObjects.options[DOM.celestialObjects.selectedIndex].text
+    let getValue = {
+    date : DOM.dateCelestialObjects.value,
+    latitude : parseFloat(DOM.latitudeCelestialObjects.value),
+    longitude : parseFloat(DOM.longitudeCelestialObjects.value),
+    time: DOM.timeCelestialObjects.value,
+    name : DOM.celestialObjects.options[DOM.celestialObjects.selectedIndex].text
+};
     return getValue;
+}
+
+
+export function addCelestialBodyInfo(bodyData){
+    const header = document.createElement('h2');
+    header.textContent = bodyData.name;
+
+    const fromEarthKm = document.createElement('p');
+    fromEarthKm.textContent = "From Earth km: "+ bodyData.fromEarthKm;
+
+    const fromEarthAu = document.createElement('p');
+    fromEarthAu.textContent = "From Earth au: "+bodyData.fromEarthAu;
+
+    const constellation = document.createElement('p');
+    constellation.textContent = "Constellation: "+ bodyData.constellation;
+
+
+    DOM.celestialBodyInfo.appendChild(header);
+    DOM.celestialBodyInfo.appendChild(fromEarthKm);
+    DOM.celestialBodyInfo.appendChild(fromEarthAu);
+    DOM.celestialBodyInfo.appendChild(constellation);
 }
 

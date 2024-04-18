@@ -67,12 +67,28 @@ export async function bodyData (){
             return response.json();
         })
         .then(data => {
-    
+         
             const planetsData = data.data.table.rows;
-            const celestialBody = planetsData.find(element => element.entry.name === getData.name);
-            console.log(celestialBody);
 
-        })
+            if (!planetsData) {
+                throw new Error("Celestial bodies data is not available.");
+            }
+            else {
+            const celestialBody = planetsData.find(element => element.entry.name === getData.name);
+            if (!celestialBody) {
+                throw new Error(`No celestial body found with the name ${getData.name}`);
+            }
+            else {
+            const bodyInfo = {
+                name : celestialBody.entry.name,
+                fromEarthKm : celestialBody.cells[0].distance.fromEarth.km,
+                fromEarthAu : celestialBody.cells[0].distance.fromEarth.au,
+                constellation : celestialBody.cells[0].position.constellation.name,
+            }
+            Carousel.addCelestialBodyInfo(bodyInfo);
+            
+        }
+        }})
         .catch(error => console.error('Fetch error:', error));
 };
 
