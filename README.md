@@ -4,6 +4,8 @@
 
 "Discover the Wonders of the Universe in Real Time!" is a responsive one-page web application designed to captivate and educate users about the vast universe. This application utilizes powerful asynchronous JavaScript tools to fetch real-time data from various external APIs including NASA's EPIC and Astronomy Picture of the Day APIs, as well as additional astronomical data from the Astronomy API covering moon phases and planet positions.
 
+Visit website[Celestial Canvas](https://katterina71.github.io/Celestial-Canvas/)
+
 ## **Goal**
 
 The primary goal of this application is to:
