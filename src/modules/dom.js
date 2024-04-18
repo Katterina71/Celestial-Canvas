@@ -26,11 +26,11 @@ export const celestialBodyInfo = document.getElementById('celestialBodyInfo');
 export const bodyImg = document.getElementById('bodyImg');
 
 
-export const celestialEvent = document.getElementById('celestialEvent');
-export const dateStartCelestialEvent = document.getElementById('dateStartCelestialEvent');
-export const dateEndCelestialEvent = document.getElementById('dateEndCelestialEvent');
-export const timeCelestialEvent = document.getElementById('timeCelestialEvent');
-export const latitudeCelestialEvent = document.getElementById('latitudeCelestialEvent');
-export const longitudeCelestialEvent = document.getElementById('longitudeCelestialEvent');
-export const btnCelestialEvent = document.getElementById('btnCelestialEvent');
-export const celestialEventsTable = document.getElementById('celestialEventsTable');
+// export const celestialEvent = document.getElementById('celestialEvent');
+// export const dateStartCelestialEvent = document.getElementById('dateStartCelestialEvent');
+// export const dateEndCelestialEvent = document.getElementById('dateEndCelestialEvent');
+// export const timeCelestialEvent = document.getElementById('timeCelestialEvent');
+// export const latitudeCelestialEvent = document.getElementById('latitudeCelestialEvent');
+// export const longitudeCelestialEvent = document.getElementById('longitudeCelestialEvent');
+// export const btnCelestialEvent = document.getElementById('btnCelestialEvent');
+// export const celestialEventsTable = document.getElementById('celestialEventsTable');
