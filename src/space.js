@@ -9,9 +9,8 @@ import  {currentDateAndTime} from './modules/module-1.js';
 
 dataNasaAPI.getHeroImage();
 DOM.dateMoonPhase.value = currentDateAndTime();
+DOM.dateStarChart.value = currentDateAndTime();
 
-// dataAstronomyAPI.astronomyAPI();
-// dataAstronomyAPI.planetaryPositions()
 
 dataAstronomyAPI.initializeWidgets();
 

@@ -5,42 +5,42 @@ const applicationSecret = '120c5b697566ac3fb25846278a74edc030675916824c3d15d6226
 export const authString = btoa(`${applicationId}:${applicationSecret}`);
 
 
-export async function astronomyAPI (){ 
-    const url = 'https://api.astronomyapi.com/api/v2/bodies';
+// export async function astronomyAPI (){ 
+//     const url = 'https://api.astronomyapi.com/api/v2/bodies';
 
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Basic ${authString}`
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => console.error('Fetch error:', error));
-    };
+//     fetch(url, {
+//         method: 'GET',
+//         headers: {
+//             'Authorization': `Basic ${authString}`
+//         }
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! Status: ${response.status}`);
+//         }
+//         return response.json();
+//     })
+//     .then(data => console.log(data))
+//     .catch(error => console.error('Fetch error:', error));
+//     };
 
-export async function planetaryPositions (){ 
-    const url = 'https://api.astronomyapi.com/api/v2/bodies/positions?longitude=-84.39733&latitude=33.775867&elevation=1&from_date=2024-04-17&to_date=2024-04-17&time=10%3A21%3A28';
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Basic ${authString}`
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => console.log(data))
-        .catch(error => console.error('Fetch error:', error));
-};
+// export async function planetaryPositions (){ 
+//     const url = 'https://api.astronomyapi.com/api/v2/bodies/positions?longitude=-84.39733&latitude=33.775867&elevation=1&from_date=2024-04-17&to_date=2024-04-17&time=10%3A21%3A28';
+//         fetch(url, {
+//             method: 'GET',
+//             headers: {
+//                 'Authorization': `Basic ${authString}`
+//             }
+//         })
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error(`HTTP error! Status: ${response.status}`);
+//             }
+//             return response.json();
+//         })
+//         .then(data => console.log(data))
+//         .catch(error => console.error('Fetch error:', error));
+// };
 
 
 

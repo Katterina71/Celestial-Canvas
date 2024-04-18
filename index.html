@@ -52,6 +52,8 @@
               
             <div class="col-5" id="earthCarousel">
                 <h2 class="mt-4">View NASA EPIC Images</h2>
+                <p>NASA's Earth Polychromatic Imaging Camera (EPIC) aboard the Deep Space Climate Observatory (DSCOVR) satellite captures stunning, full-color images of Earth multiple times a day from one million miles away. Positioned at the Lagrange point 1 (L1), EPIC monitors Earth’s atmosphere, weather patterns, and environmental changes, providing essential data for climate research and weather forecasting. The vivid images of our planet also serve to increase public awareness of environmental issues and the planet's interconnected ecosystems. Additionally, EPIC captures unique phenomena like solar eclipses, offering valuable insights and enhancing our understanding of Earth’s climate system.</p>
+                <hr class="border border-ligth border-2 opacity-50 my-4">
                  <p class ="text"></p>
             <button class="btn btn-light px-5" id="stopBtn">Stop spinning</button>
 
@@ -107,13 +109,31 @@
       </div>
       <div class="container text-light mt-5">
         <div class="row">
-            <h2>Planetary Positions</h2>
+            <h2>Star Canvas</h2>
         </div>
-        <div class="row">
-            <select class="form-select my-2" aria-label="Background Style" id="selectBg">
-                <option value="1">Stars</option>
-                <option value="2">Solid</option>
-              </select>
+        <div class="row bg-dark py-4">
+            <div class="col-3">
+                <select class="form-select my-2" aria-label="Background Style" id="constellation">
+                    <option value="1">Stars</option>
+                    <option value="2">Solid</option>
+                </select>
+                <input class="form-control my-2" type="date" placeholder="Default input" id="dateStarChart">
+                <div class="row py-4">
+                    <div class="col">
+                        <label for="latitude" class="form-label">Latitude</label>
+                        <input type="text" class="form-control" id="latitudeStarChart" value="39.579231"aria-label="Default input">
+                    </div>
+                    <div class="col">
+                        <label for="longitude" class="form-label">Longitude</label>
+                        <input type="text" class="form-control" id="longitudeStarChart" value="-104.876694" aria-label="Default input">
+                   </div>
+                </div>
+
+                <button class="btn btn btn-outline-light px-5 my-2" id="btnStarChart">Generate Stars Chart</button>
+            </div>
+            <div class="col">
+
+            </div>
         </div>
       </div>
 

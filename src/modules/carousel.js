@@ -94,7 +94,6 @@ export function getValueMoonPhase(){
     getValue.date = DOM.dateMoonPhase.value;
     getValue.latitude = parseFloat(DOM.latitudeMoonPhase.value);
     getValue.longitude = parseFloat(DOM.longitudeMoonPhase.value);
-   (DOM.selectBg.value === '1') ? getValue.background='star' : getValue.background='solid';
     return getValue
 }
 
