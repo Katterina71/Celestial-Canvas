@@ -120,6 +120,7 @@ export function getCelestialObjects(){
     getValue.date = DOM.dateCelestialObjects.value;
     getValue.latitude = parseFloat(DOM.latitudeCelestialObjects.value);
     getValue.longitude = parseFloat(DOM.longitudeCelestialObjects.value);
+    getValue.time = DOM.timeCelestialObjects.value
     getValue.name =  DOM.celestialObjects.options[DOM.celestialObjects.selectedIndex].text
     return getValue;
 }

@@ -19,5 +19,6 @@ export const dateCelestialObjects = document.getElementById('dateCelestialObject
 export const latitudeCelestialObjects = document.getElementById('latitudeCelestialObjects')
 export const longitudeCelestialObjects = document.getElementById('longitudeCelestialObjects')
 export const btnCelestialObjects = document.getElementById('btnCelestialObjects')
+export const timeCelestialObjects = document.getElementById('timeCelestialObjects');
 
 

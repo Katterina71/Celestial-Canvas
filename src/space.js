@@ -8,8 +8,9 @@ import  {currentDateAndTime} from './modules/module-1.js';
 
 
 dataNasaAPI.getHeroImage();
-DOM.dateMoonPhase.value = currentDateAndTime();
-DOM.dateCelestialObjects.value = currentDateAndTime();
+DOM.dateMoonPhase.value = currentDateAndTime()[0];
+DOM.dateCelestialObjects.value = currentDateAndTime()[0];
+DOM.timeCelestialObjects.value = currentDateAndTime()[1];
 
 
 
