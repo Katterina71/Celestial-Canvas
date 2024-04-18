@@ -10,7 +10,6 @@ export function objectDate (dateString) {
 }
 
 export function currentDateAndTime (){
-debugger;
 const date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;

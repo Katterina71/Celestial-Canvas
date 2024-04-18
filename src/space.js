@@ -8,16 +8,18 @@ import  {currentDateAndTime} from './modules/module-1.js';
 
 
 dataNasaAPI.getHeroImage();
-dataAstronomyAPI.astronomyAPI();
-dataAstronomyAPI.planetaryPositions()
+DOM.dateMoonPhase.value = currentDateAndTime();
+
+// dataAstronomyAPI.astronomyAPI();
+// dataAstronomyAPI.planetaryPositions()
 
 dataAstronomyAPI.initializeWidgets();
+
 
 setTimeout(function() {
     Carousel.spinning(false);
 }, 3000);
 
-DOM.dateMoonPhase.value = currentDateAndTime();
 
 
 document.querySelector('.prev').addEventListener('click', Carousel.previousSlide);
@@ -27,3 +29,4 @@ DOM.stopBtn.addEventListener('click', function(e){
     Carousel.spinning(true)
 });
 
+DOM.btnMoonPhase.addEventListener('click',Carousel.createMoonWidget)

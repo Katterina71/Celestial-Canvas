@@ -1,5 +1,5 @@
 import * as DOM from './dom.js'
-
+import * as dataAstronomyAPI from './apiAstronomy.js';
 
 let run = true;
 
@@ -87,3 +87,24 @@ export function moonPhase(srcMoon){
     imgMoon.src = srcMoon;
     DOM.moonWidget.appendChild(imgMoon);
 }
+
+
+export function getValueMoonPhase(){
+    let getValue = {};
+    getValue.date = DOM.dateMoonPhase.value;
+    getValue.latitude = parseFloat(DOM.latitudeMoonPhase.value);
+    getValue.longitude = parseFloat(DOM.longitudeMoonPhase.value);
+   (DOM.selectBg.value === '1') ? getValue.background='star' : getValue.background='solid';
+    return getValue
+}
+
+function clear (object) {
+    object.remove();
+}
+
+export function createMoonWidget (){
+    debugger;
+    clear(DOM.moonWidget.firstChild);
+    dataAstronomyAPI.initializeWidgets();
+}
+

@@ -45,7 +45,9 @@ export async function planetaryPositions (){
 
 
 export async function initializeWidgets(){
+const inputData = Carousel.getValueMoonPhase();
 const url = 'https://api.astronomyapi.com/api/v2/studio/moon-phase';
+
 const data = JSON.stringify({
     "style": {
         "moonStyle": "default",
@@ -55,15 +57,16 @@ const data = JSON.stringify({
         "textColor": "#ffffff"
     },
     "observer": {
-        "latitude": 33.775867,
-        "longitude": -84.39733,
-        "date": "2024-04-17"
+        "latitude": inputData.latitude,
+        "longitude": inputData.longitude,
+        "date": inputData.date
     },
     "view": {
         "type": "landscape-simple",
         "parameters": {}
     }
 });
+
  fetch(url, {
 	method: 'POST',
 	headers: {
