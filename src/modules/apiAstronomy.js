@@ -51,7 +51,7 @@ export async function planetaryPositions (){
 };
 
 export async function bodyData (){ 
-    debugger;
+  
     const getData =  Carousel.getCelestialObjects()
     const url = `https://api.astronomyapi.com/api/v2/bodies/positions?longitude=${getData.longitude}&latitude=${getData.latitude}&elevation=0&from_date=${getData.date}&to_date=${getData.date}&time=${getData.time}`;
         fetch(url, {

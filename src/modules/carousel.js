@@ -1,5 +1,6 @@
 import * as DOM from './dom.js'
 import * as dataAstronomyAPI from './apiAstronomy.js';
+import {celestialBodiesArr} from './celestialBodies.js'
 
 let run = true;
 
@@ -127,6 +128,23 @@ export function getCelestialObjects(){
     return getValue;
 }
 
+export function generateCelestialBody(){
+ debugger;
+        if (Array.isArray(DOM.celestialBodyInfo)) {
+            DOM.celestialBodyInfo.forEach(element => {
+            
+                if (element.firstChild) {
+                    clear(element.firstChild);
+                }
+            });
+        }
+        if (DOM.bodyImg && DOM.bodyImg.firstChild) {
+            clear(DOM.bodyImg.firstChild);
+        }
+    dataAstronomyAPI.bodyData();
+} 
+
+
 
 export function addCelestialBodyInfo(bodyData){
     const header = document.createElement('h2');
@@ -146,5 +164,14 @@ export function addCelestialBodyInfo(bodyData){
     DOM.celestialBodyInfo.appendChild(fromEarthKm);
     DOM.celestialBodyInfo.appendChild(fromEarthAu);
     DOM.celestialBodyInfo.appendChild(constellation);
+
+   
+    const imgBody = document.createElement('img');
+    const imgSrc = celestialBodiesArr.find(element => element.name === bodyData.name)
+    imgBody.src = imgSrc.src;
+    imgBody.classList.add('imgCelestialBody')
+
+    DOM.bodyImg.appendChild(imgBody);
+
 }
 

@@ -22,3 +22,4 @@ export const btnCelestialObjects = document.getElementById('btnCelestialObjects'
 export const timeCelestialObjects = document.getElementById('timeCelestialObjects');
 
 export const celestialBodyInfo = document.getElementById('celestialBodyInfo');
+export const bodyImg = document.getElementById('bodyImg');

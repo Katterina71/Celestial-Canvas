@@ -31,4 +31,4 @@ DOM.stopBtn.addEventListener('click', function(e){
 });
 
 DOM.btnMoonPhase.addEventListener('click',Carousel.createMoonWidget)
-DOM.btnCelestialObjects.addEventListener('click',dataAstronomyAPI.bodyData);
+DOM.btnCelestialObjects.addEventListener('click',Carousel.generateCelestialBody);

@@ -16,3 +16,9 @@ color: white;
     background-attachment: fixed;
     height: 100%;
 }
+
+
+.imgCelestialBody {
+    width: 100%;
+    background-size: contain;
+}
