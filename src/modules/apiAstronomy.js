@@ -50,6 +50,31 @@ export async function planetaryPositions (){
         .catch(error => console.error('Fetch error:', error));
 };
 
+export async function bodyData (){ 
+    debugger;
+    const getData =  Carousel.getCelestialObjects()
+    const url = `https://api.astronomyapi.com/api/v2/bodies/positions?longitude=${getData.longitude}&latitude=${getData.latitude}&elevation=0&from_date=${getData.date}&to_date=${getData.date}&time=10%3A21%3A28`;
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Basic ${authString}`
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+    
+            const planetsData = data.data.table.rows;
+            const celestialBody = planetsData.find(element => element.entry.name === getData.name);
+            console.log(celestialBody);
+
+        })
+        .catch(error => console.error('Fetch error:', error));
+};
 
 
 export async function initializeWidgets(){

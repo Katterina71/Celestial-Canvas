@@ -115,7 +115,7 @@ export function listOfBodies (index, bodyName){
 } 
 
 export function getCelestialObjects(){
-    debugger;
+    
     let getValue = {};
     getValue.date = DOM.dateCelestialObjects.value;
     getValue.latitude = parseFloat(DOM.latitudeCelestialObjects.value);
