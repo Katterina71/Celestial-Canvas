@@ -17,17 +17,17 @@ class allCelestialBodies {
 }
 const celestialBodiesArray = new allCelestialBodies();
 
-celestialBodiesArray.createBodiesList('Sun', '../img/bodies/sun.webp')
-celestialBodiesArray.createBodiesList('Earth', '../img/bodies/earth.jpeg')
-celestialBodiesArray.createBodiesList('Jupiter', '../img/bodies/jupiter.avif')
-celestialBodiesArray.createBodiesList('Mars', '../img/bodies/mars.jpeg')
-celestialBodiesArray.createBodiesList('Mercury', '../img/bodies/mercury.webp')
-celestialBodiesArray.createBodiesList('Moon', '../img/bodies/moon.webp')
-celestialBodiesArray.createBodiesList('Neptune', '../img/bodies/neptune.webp')
-celestialBodiesArray.createBodiesList('Pluton', '../img/bodies/pluton.jpeg')
-celestialBodiesArray.createBodiesList('Uranus', '../img/bodies/uranus.webp')
-celestialBodiesArray.createBodiesList('Venus', '../img/bodies/venus.jpeg')
-celestialBodiesArray.createBodiesList('Saturn', '../img/bodies/saturn.webp')
+celestialBodiesArray.createBodiesList('Sun', './img/bodies/sun.webp')
+celestialBodiesArray.createBodiesList('Earth', './img/bodies/earth.jpeg')
+celestialBodiesArray.createBodiesList('Jupiter', './img/bodies/jupiter.avif')
+celestialBodiesArray.createBodiesList('Mars', './img/bodies/mars.jpeg')
+celestialBodiesArray.createBodiesList('Mercury', './img/bodies/mercury.webp')
+celestialBodiesArray.createBodiesList('Moon', './img/bodies/moon.webp')
+celestialBodiesArray.createBodiesList('Neptune', './img/bodies/neptune.webp')
+celestialBodiesArray.createBodiesList('Pluton', './img/bodies/pluton.jpeg')
+celestialBodiesArray.createBodiesList('Uranus', './img/bodies/uranus.webp')
+celestialBodiesArray.createBodiesList('Venus', './img/bodies/venus.jpeg')
+celestialBodiesArray.createBodiesList('Saturn', './img/bodies/saturn.webp')
 
 
 export const celestialBodiesArr = celestialBodiesArray.bodies;
