@@ -130,13 +130,14 @@ export function getCelestialObjects(){
 
 export function generateCelestialBody(){
  debugger;
-        if (Array.isArray(DOM.celestialBodyInfo)) {
-            DOM.celestialBodyInfo.forEach(element => {
-            
-                if (element.firstChild) {
-                    clear(element.firstChild);
+        if (DOM.celestialBodyInfo.hasChildNodes()) {
+
+    
+                while (DOM.celestialBodyInfo.firstChild) {
+                    DOM.celestialBodyInfo.removeChild(DOM.celestialBodyInfo.firstChild);
                 }
-            });
+     
+            
         }
         if (DOM.bodyImg && DOM.bodyImg.firstChild) {
             clear(DOM.bodyImg.firstChild);
