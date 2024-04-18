@@ -102,7 +102,7 @@ function clear (object) {
 }
 
 export function createMoonWidget (){
-    debugger;
+  
     clear(DOM.moonWidget.firstChild);
     dataAstronomyAPI.initializeWidgets();
 }
@@ -111,5 +111,16 @@ export function listOfBodies (index, bodyName){
     const optionBody = document.createElement('option');
     optionBody.value = index;
     optionBody.innerHTML = bodyName;
-    DOM.constellation.appendChild(optionBody);
+    DOM.celestialObjects.appendChild(optionBody);
 } 
+
+export function getCelestialObjects(){
+    debugger;
+    let getValue = {};
+    getValue.date = DOM.dateCelestialObjects.value;
+    getValue.latitude = parseFloat(DOM.latitudeCelestialObjects.value);
+    getValue.longitude = parseFloat(DOM.longitudeCelestialObjects.value);
+    getValue.name =  DOM.celestialObjects.options[DOM.celestialObjects.selectedIndex].text
+    return getValue;
+}
+

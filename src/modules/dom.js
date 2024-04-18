@@ -14,10 +14,10 @@ export const longitudeMoonPhase = document.getElementById('longitudeMoonPhase');
 export const selectBg = document.getElementById('selectBg');
 export const btnMoonPhase = document.getElementById('btnMoonPhase');
 
-export const constellation = document.getElementById('constellation')
-export const dateStarChart = document.getElementById('dateStarChart')
-export const latitudeStarChart = document.getElementById('latitudeStarChart')
-export const longitudeStarChart = document.getElementById('longitudeStarChart')
-export const btnStarChart = document.getElementById('btnStarChart')
+export const celestialObjects = document.getElementById('celestialObjects')
+export const dateCelestialObjects = document.getElementById('dateCelestialObjects')
+export const latitudeCelestialObjects = document.getElementById('latitudeCelestialObjects')
+export const longitudeCelestialObjects = document.getElementById('longitudeCelestialObjects')
+export const btnCelestialObjects = document.getElementById('btnCelestialObjects')
 
 

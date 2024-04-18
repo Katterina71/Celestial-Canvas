@@ -9,7 +9,8 @@ import  {currentDateAndTime} from './modules/module-1.js';
 
 dataNasaAPI.getHeroImage();
 DOM.dateMoonPhase.value = currentDateAndTime();
-DOM.dateStarChart.value = currentDateAndTime();
+DOM.dateCelestialObjects.value = currentDateAndTime();
+
 
 
 dataAstronomyAPI.initializeWidgets();
@@ -29,3 +30,4 @@ DOM.stopBtn.addEventListener('click', function(e){
 });
 
 DOM.btnMoonPhase.addEventListener('click',Carousel.createMoonWidget)
+DOM.btnCelestialObjects.addEventListener('click',Carousel.getCelestialObjects);

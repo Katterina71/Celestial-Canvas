@@ -43,9 +43,7 @@ export async function planetaryPositions (){
             const planetsData = data.data.table.rows;
             const planets = planetsData.map(element => element.entry.name);
             for (let i in planets ){
-                debugger;
                 Carousel.listOfBodies (i, planets[i]);
-                debugger;
             }
 
         })
