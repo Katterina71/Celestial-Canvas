@@ -1,6 +1,7 @@
 import * as DOM from './dom.js'
 import * as dataAstronomyAPI from './apiAstronomy.js';
 import {celestialBodiesArr} from './celestialBodies.js'
+import  {formatNumberWithSpaces} from './module-1.js';
 
 let run = true;
 
@@ -152,10 +153,11 @@ export function addCelestialBodyInfo(bodyData){
     header.textContent = bodyData.name;
 
     const fromEarthKm = document.createElement('p');
-    fromEarthKm.textContent = "From Earth km: "+ bodyData.fromEarthKm;
 
-    const fromEarthAu = document.createElement('p');
-    fromEarthAu.textContent = "From Earth au: "+bodyData.fromEarthAu;
+    fromEarthKm.textContent = "From Earth: "+ formatNumberWithSpaces(Math.round(bodyData.fromEarthKm))+ " km";
+
+    const fromEarthAu = document.createElement('p'); 
+    fromEarthAu.textContent = "From Earth au: "+ bodyData.fromEarthAu;
 
     const constellation = document.createElement('p');
     constellation.textContent = "Constellation: "+ bodyData.constellation;
