@@ -31,12 +31,12 @@ The primary goal of this application is to:
 - **Astronomy API**
     - Moon Phase Data
     - Planet Data
-    - 
+      
 ## **Project Features and Instructions**
 
 ### **External Web API Interaction**
 
-- **Data Integration**: Use the **`fetch`** API or **`Axios`** to communicate with external web APIs such as the NASA API and AstronomyAPI. Fetch data dynamically and utilize this data to populate the content and features of the application.
+- **Data Integration**: Used the **`fetch`** API to communicate with external web APIs such as the NASA API and AstronomyAPI. Fetch data dynamically and utilize this data to populate the content and features of the application.
 
 ### **User Interaction Features**
 
@@ -45,7 +45,7 @@ The primary goal of this application is to:
 
 ### **Code Organization**
 
-- **Modular JavaScript**: Organize your JavaScript code into six distinct modules to streamline management and enhance maintainability:
+- **Modular JavaScript**: Organize JavaScript code into six distinct modules to streamline management and enhance maintainability:
     1. **dom.js**: Collect and manage all DOM elements.
     2. **apiNasa.js** and **apiAstronomy.js**: Handle connections and interactions with the NASA and AstronomyAPIs, respectively.
     3. **module-1.js**: Focus on date manipulation utilities.
