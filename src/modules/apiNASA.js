@@ -18,12 +18,24 @@ export async function getHeroImage() {
     
        const todayData = await response.json();
     
-       if (!todayData || !todayData.hdurl) {
+    //    if (!todayData || !todayData.hdurl) {
+    //     throw new Error('No data found!');
+    // }
+    
+    //    todayData.hdurl;
+    //    DOM.heroImg.src = todayData.hdurl;
+    //    DOM.todayDate.innerHTML = todayData.date;
+    //    DOM.imgTitle.innerHTML = todayData.title;
+    //    DOM.explanation.innerHTML = todayData.explanation;
+    //    DOM.copyright.innerHTML = todayData.copyright;
+
+     
+    if (!todayData || !todayData.url ) {
         throw new Error('No data found!');
     }
     
-       todayData.hdurl;
-       DOM.heroImg.src = todayData.hdurl;
+       todayData.url;
+       DOM.heroImg.src = todayData.url;
        DOM.todayDate.innerHTML = todayData.date;
        DOM.imgTitle.innerHTML = todayData.title;
        DOM.explanation.innerHTML = todayData.explanation;
