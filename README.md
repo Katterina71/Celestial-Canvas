@@ -6,6 +6,10 @@
 
 Visit website [Celestial Canvas](https://katterina71.github.io/Celestial-Canvas/)
 
+## **Example**
+![]{https://github.com/Katterina71/Celestial-Canvas/blob/main/info/Celectial.gif}
+
+
 ## **Goal**
 
 The primary goal of this application is to:
