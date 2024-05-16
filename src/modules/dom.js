@@ -1,4 +1,5 @@
-export const heroImg = document.getElementById('heroIMG');
+export const heroImg = document.querySelectorAll('.heroIMG');
+
 export const todayDate= document.getElementById('todayDate');
 export const imgTitle= document.getElementById('imgTitle');
 export const explanation= document.getElementById('explanation');

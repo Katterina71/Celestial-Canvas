@@ -35,7 +35,14 @@ export async function getHeroImage() {
     }
     
        todayData.url;
-       DOM.heroImg.src = todayData.url;
+       if(todayData.url.includes(".jpg")){
+            DOM.heroImg[1].style.display="none"
+            DOM.heroImg[0].src = todayData.url;
+        }else{
+            DOM.heroImg[1].src = todayData.url;
+           DOM.heroImg[0].style.display="none"
+
+       }
        DOM.todayDate.innerHTML = todayData.date;
        DOM.imgTitle.innerHTML = todayData.title;
        DOM.explanation.innerHTML = todayData.explanation;
